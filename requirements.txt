@@ -1,4 +1,4 @@
 fastapi==0.78.0
 uvicorn[standard]
 transformers==4.20.1
-tensorflow==2.9.1
+torch==2.1.0
