@@ -25,6 +25,8 @@ RUN pip install -r requirements.txt
 # Expose the application port
 ENTRYPOINT [ "uvicorn" ]
 
+EXPOSE 8000
+
 # Create a non-root user
 # RUN useradd -m myuser
 # USER myuser
@@ -32,4 +34,4 @@ ENTRYPOINT [ "uvicorn" ]
 # Command to run the application with Gunicorn
 #CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "4", "--timeout", "120", "wsgi:app"]
 
-CMD ["--host", "0.0.0.0","main:app"]
+CMD ["--host", "0.0.0.0", port=int(8000)"main:app"]

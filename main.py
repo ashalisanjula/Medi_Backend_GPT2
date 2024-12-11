@@ -36,10 +36,14 @@ def generate_ai_suggestions(input_text: str, num_suggestions: int = 3) -> List[s
     return [g['generated_text'].strip() for g in generated]
 
 # Endpoint to check if the server is running
-@app.route('/', methods=['GET'])
+@app.get("/")
 def status_check():
-    
-    return JSONResponse({'prompt': "Server is Up and Running..."})
+    """
+    Endpoint to check the server status.
+
+    :return: JSON response confirming server status.
+    """
+    return JSONResponse({"message": "Server is running!"})
 
 @app.route('/suggest', methods=["POST"])
 async def suggest(request: Request):
