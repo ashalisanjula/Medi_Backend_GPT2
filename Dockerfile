@@ -34,4 +34,4 @@ EXPOSE 8000
 # Command to run the application with Gunicorn
 #CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "4", "--timeout", "120", "wsgi:app"]
 
-CMD ["--host", "0.0.0.0", port=int(8000)"main:app"]
+CMD ["--host", "0.0.0.0", port=int("8000"),"main:app"]
